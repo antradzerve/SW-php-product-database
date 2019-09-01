@@ -4,7 +4,6 @@ $(document).ready(function() {
     $("#book, #furniture").hide();
 
     $("#opt-select").change(function() {
-        console.log($(this).val());
         switch ($(this).val()){
             case "opt-book":
                 $("#book").show();
