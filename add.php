@@ -13,89 +13,90 @@
 </head>
 
 <body>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col d-flex m-3">
-                <p class="m-0 align-self-center">Product add</p>
-            </div>
-            <div class="col m-3 d-flex justify-content-end">
-                <button type="button" class="btn btn-light">Save</button>
+    <form action="insert.php" method="post">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col d-flex m-3">
+                    <p class="m-0 align-self-center">Product add</p>
+                </div>
+                <div class="col m-3 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-light">Save</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <form>
+        <div class="container">
             <div class="form-group row">
                 <label class="col-2">SKU</label>
                 <div class="col-4">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="sku">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2">Name</label>
                 <div class="col-4">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="name">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2">Price</label>
                 <div class="col-4">
-                    <input type="number" class="form-control">
+                    <input type="number" class="form-control" name="price">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2">Type switcher</label>
-                <div class="col-4"><select class="form-control" id="opt-select">
+                <div class="col-4">
+                    <select class="form-control" id="opt-select" name="type">
                         <option value="opt-dvd">DVD-disc</option>
                         <option value="opt-book">Book</option>
                         <option value="opt-furniture">Furniture</option>
                     </select>
                 </div>
             </div>
-        </form>
-    </div>
 
-    <div class="container" id="dvd-disc">
-        <form>
+        </div>
+
+        <div class="container" id="dvd-disc">
+
             <div class="form-group row">
                 <label class="col-2">Size</label>
-                <div class="col-4"><input type="number" class="form-control"></div>
+                <div class="col-4"><input type="number" class="form-control" name="size"></div>
             </div>
-        </form>
-        <p>Please provide the size of the disc in MB</p>
-    </div>
 
-    <div class="container" id="book">
-        <form>
+            <p>Please provide the size of the disc in MB</p>
+        </div>
+
+        <div class="container" id="book">
+
             <div class="form-group row">
                 <label class="col-2">Weight</label>
-                <div class="col-4"><input type="number" class="form-control"></div>
+                <div class="col-4"><input type="number" class="form-control" name="weight"></div>
             </div>
-        </form>
-        <p>Please provide the weight of the book in KG</p>
-    </div>
 
-    <div class="container" id="furniture">
-        <form>
+            <p>Please provide the weight of the book in KG</p>
+        </div>
+
+        <div class="container" id="furniture">
+
             <div class="form-group">
                 <div class="form-row my-1">
                     <label class="col-2">Height</label>
-                    <div class="col-4"><input type="number" class="form-control"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="height"></div>
                 </div>
                 <div class="form-row my-1">
                     <label class="col-2">Width</label>
-                    <div class="col-4"><input type="number" class="form-control"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="width"></div>
                 </div>
                 <div class="form-row my-1">
                     <label class="col-2">Length</label>
-                    <div class="col-4"><input type="number" class="form-control"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="length"></div>
                 </div>
             </div>
-        </form>
-        <p>Please provide the dimensions in HxWxL format in meters</p>
-    </div>
+
+            <p>Please provide the dimensions in HxWxL format in meters</p>
+        </div>
+    </form>
 
 
 
