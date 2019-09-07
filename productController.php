@@ -1,14 +1,18 @@
 <?php
 
+function PostRequest() {
+
+    echo 'Executing POST request...\n';
+
     $sku = $_REQUEST['sku'];
     $name = $_POST['name'];
     $price = $_REQUEST['price'];
     $type = $_REQUEST['type'];
-    $size = $_REQUEST['size'];
-    $weight = $_REQUEST['weight'];
-    $height = $_REQUEST['height'];
-    $width = $_REQUEST['width'];
-    $length = $_REQUEST['length'];
+    $size = empty($_REQUEST['size']) ? null : $_REQUEST['size'];
+    $weight = empty($_REQUEST['weight']) ? null : $_REQUEST['weight'];
+    $height = empty($_REQUEST['height']) ? null : $_REQUEST['height'];
+    $width = empty($_REQUEST['width']) ? null : $_REQUEST['width'];
+    $length = empty($_REQUEST['length']) ? null : $_REQUEST['length'];
 
 /*** mysql hostname ***/
 $hostname = '127.0.0.1';
@@ -22,7 +26,7 @@ $password = 'root';
 try {
     $conn = new PDO("mysql:host=$hostname;dbname=scandiweb", $username, $password);
     /*** echo a message saying we have connected ***/
-    echo 'Connected to database';
+    echo 'Connected to database\n';
     }
 catch(PDOException $e)
     {
@@ -48,5 +52,13 @@ try{
 } catch(PDOException $e){
     die("ERROR: Could not able to execute $sql. " . $e->getMessage());
 }
+}
+  
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // The request is using the POST method
+    echo 'Before execution...';
+    PostRequest();
+}
+
 
 ?>
