@@ -30,13 +30,18 @@ catch(PDOException $e)
     }
 
 try{    
-    $sql = "INSERT INTO products (sku, name, price, type) VALUES (:sku, :name, :price, :type)";
+    $sql = "INSERT INTO products (sku, name, price, type, size, weight, height, width, length) VALUES (:sku, :name, :price, :type, :size, :weight, :height, :width, :length)";
     $stmt = $conn->prepare($sql);
 
     $stmt->bindParam(':sku', $sku);
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':price', $price);
     $stmt->bindParam(':type', $type);
+    $stmt->bindParam(':size', $size);
+    $stmt->bindParam(':weight', $weight);
+    $stmt->bindParam(':height', $height);
+    $stmt->bindParam(':width', $width);
+    $stmt->bindParam(':length', $length);
 
     $stmt->execute();
     echo "Records inserted successfully.";
