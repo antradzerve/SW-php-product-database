@@ -2,15 +2,15 @@
 
 class ProductModel
 {
-    private $sku;
-    private $name;
-    private $price;
-    private $type;
-    private $size;
-    private $weight;
-    private $height;
-    private $length;
-    private $width;
+    public $sku;
+    public $name;
+    public $price;
+    public $type;
+    public $size;
+    public $weight;
+    public $height;
+    public $length;
+    public $width;
 
     public function __construct(
         $sku,
@@ -34,7 +34,7 @@ class ProductModel
         $this->width = $width;
     }
 
-    private function createConnection()
+    private static function createConnection()
     {
         /*** mysql hostname ***/
         $hostname = '127.0.0.1';
@@ -85,4 +85,15 @@ class ProductModel
 
         unset($conn);
     }
+
+    public static function getAll(){
+        $conn = ProductModel::createConnection();
+        if (!$conn) {
+            return;
+        }
+
+        //todo: get data from DB, map to products, return array;
+
+    }
+
 }

@@ -4,8 +4,6 @@ include ("Model/productModel.php");
 
 function PostRequest() {
 
-    echo 'Executing POST request...\n';
-
     $sku = $_REQUEST['sku'];
     $name = $_POST['name'];
     $price = $_REQUEST['price'];
@@ -33,9 +31,56 @@ function PostRequest() {
   
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // The request is using the POST method
-    echo 'Before execution...';
     PostRequest();
 }
+
+function getAllProducts() {
+
+    $allProducts = ProductModel::getAll();
+
+    $book = new ProductModel(
+        13,
+        "hp",
+        444,
+        "opt-book",
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL
+    );
+
+    $dvd = new ProductModel(
+        3,
+        "hp",
+        444,
+        "opt-dvd",
+        NULL,
+        12,
+        NULL,
+        NULL,
+        NULL
+    );
+
+    $furniture = new ProductModel(
+        1,
+        "hp",
+        894,
+        "opt-furniture",
+        NULL,
+        NULL,
+        5,
+        6,
+        7
+    );
+
+    //todo: get this from model
+    $arr = array($book, $dvd, $furniture);
+
+    return $arr;
+
+}
+
 
 
 ?>
