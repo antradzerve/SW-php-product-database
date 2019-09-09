@@ -61,7 +61,7 @@
 
             <div class="form-group row">
                 <label class="col-2">Size</label>
-                <div class="col-4"><input type="number" class="form-control" name="size"></div>
+                <div class="col-4"><input type="number" class="form-control" name="size" min="0"></div>
             </div>
 
             <p>Please provide the size of the disc in MB</p>
@@ -71,7 +71,7 @@
 
             <div class="form-group row">
                 <label class="col-2">Weight</label>
-                <div class="col-4"><input type="number" class="form-control" name="weight" step="0.001"></div>
+                <div class="col-4"><input type="number" class="form-control" name="weight" step="0.001" min="0"></div>
             </div>
 
             <p>Please provide the weight of the book in KG</p>
@@ -80,17 +80,17 @@
         <div class="container" id="furniture">
 
             <div class="form-group">
-                <div class="form-row my-1">
+                <div class="row my-1">
                     <label class="col-2">Height</label>
-                    <div class="col-4"><input type="number" class="form-control" name="height" step="0.01"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="height" step="0.01" min="0"></div>
                 </div>
-                <div class="form-row my-1">
+                <div class="row my-1">
                     <label class="col-2">Width</label>
-                    <div class="col-4"><input type="number" class="form-control" name="width" step="0.01"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="width" step="0.01" min="0"></div>
                 </div>
-                <div class="form-row my-1">
+                <div class="row my-1">
                     <label class="col-2">Length</label>
-                    <div class="col-4"><input type="number" class="form-control" name="length" step="0.01"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="length" step="0.01" min="0"></div>
                 </div>
             </div>
 

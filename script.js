@@ -19,4 +19,15 @@ $(document).ready(function() {
         }    
     });
 
+    $(".custom-select").change(function() {
+    var selValue = $(".custom-select").val();
+        
+    if(selValue == 1){
+        $("#apply-button").removeClass("disabled");
+    }
+    else{ 
+        $("#apply-button").addClass("disabled");
+    };
+    });
+
 });
