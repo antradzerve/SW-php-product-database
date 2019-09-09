@@ -33,31 +33,32 @@
         </div>
     </div>
 
-    <div class="card-deck m-3">
-        <?php
+    <div class="container">
+        <div class="row">
+            <?php
 
-        include("productController.php");
+                include("productController.php");
 
-        $arr = getAllProducts();
-        foreach ($arr as $product) {
-            $type = $product->type;
-            switch ($type) {
-                case 'opt-book':
-                    include('view/book.php');
-                    break;
-                case 'opt-dvd':
-                    include('view/dvd.php');
-                    break;
-                case 'opt-furniture':
-                    include('view/furniture.php');
-                    break;
-                default:
-                    include('view/error.php');
-                    break;
-            }
-        }
-
-        ?>
+                $arr = getAllProducts();
+                foreach ($arr as $product) {
+                    $type = $product->type;
+                    switch ($type) {
+                        case 'opt-book':
+                            include('view/book.php');
+                            break;
+                        case 'opt-dvd':
+                            include('view/dvd.php');
+                            break;
+                        case 'opt-furniture':
+                            include('view/furniture.php');
+                            break;
+                        default:
+                            include('view/error.php');
+                            break;
+                    }
+                }
+                ?>
+        </div>
     </div>
 
 
