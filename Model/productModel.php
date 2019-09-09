@@ -91,8 +91,18 @@ class ProductModel
         if (!$conn) {
             return;
         }
+        
+        $sth = $conn->query("SELECT * FROM products");
+        $result = $sth->fetchAll();
 
-        //todo: get data from DB, map to products, return array;
+        $arr = array();
+
+        foreach ($result as $row) {
+
+            $newProduct = new ProductModel($row['sku'],$row['name'],$row['price'],$row['type'],$row['size'],$row['weight'],$row['height'],$row['width'],$row['length'] );
+            array_push($arr, $newProduct);
+        }
+        return $arr;
 
     }
 
