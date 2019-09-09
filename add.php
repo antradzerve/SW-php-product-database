@@ -41,7 +41,7 @@
             <div class="form-group row">
                 <label class="col-2">Price</label>
                 <div class="col-4">
-                    <input type="number" class="form-control" name="price">
+                    <input type="number" class="form-control" name="price" step="0.01">
                 </div>
             </div>
             <div class="form-group row">
@@ -71,7 +71,7 @@
 
             <div class="form-group row">
                 <label class="col-2">Weight</label>
-                <div class="col-4"><input type="number" class="form-control" name="weight"></div>
+                <div class="col-4"><input type="number" class="form-control" name="weight" step="0.001"></div>
             </div>
 
             <p>Please provide the weight of the book in KG</p>
@@ -82,23 +82,21 @@
             <div class="form-group">
                 <div class="form-row my-1">
                     <label class="col-2">Height</label>
-                    <div class="col-4"><input type="number" class="form-control" name="height"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="height" step="0.01"></div>
                 </div>
                 <div class="form-row my-1">
                     <label class="col-2">Width</label>
-                    <div class="col-4"><input type="number" class="form-control" name="width"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="width" step="0.01"></div>
                 </div>
                 <div class="form-row my-1">
                     <label class="col-2">Length</label>
-                    <div class="col-4"><input type="number" class="form-control" name="length"></div>
+                    <div class="col-4"><input type="number" class="form-control" name="length" step="0.01"></div>
                 </div>
             </div>
 
             <p>Please provide the dimensions in HxWxL format in meters</p>
         </div>
     </form>
-
-
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>

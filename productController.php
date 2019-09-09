@@ -27,11 +27,12 @@ function PostRequest() {
     );
 
     $product->save();
+
 }
   
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // The request is using the POST method
     PostRequest();
+    header('Location: add.php');
 }
 
 function getAllProducts() {
@@ -43,8 +44,8 @@ function getAllProducts() {
         "hp",
         444,
         "opt-book",
-        1,
         NULL,
+        1,
         NULL,
         NULL,
         NULL
@@ -55,8 +56,8 @@ function getAllProducts() {
         "hp",
         444,
         "opt-dvd",
-        NULL,
         12,
+        NULL,
         NULL,
         NULL,
         NULL
