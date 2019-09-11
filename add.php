@@ -97,6 +97,7 @@
 
             <p>Please provide the dimensions in HxWxL format in meters</p>
         </div>
+        <div class="container"><p id="errormsg"></p></div>
     </form>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -73,17 +73,29 @@ function validateFurniture(form) {
 function validateFields(form) {
     
     let type = form.type;
+    let errormsg = $("#errormsg");
+    let valResult = true;
     
     switch (type.value){
         case "opt-book":
-            return validateBook(form);
+            valResult = validateBook(form);
+            break;
         case "opt-furniture":
-            return validateFurniture(form);
+            valResult = validateFurniture(form);
+            break;
         case "opt-dvd":
-            return validateDvd(form);
+            valResult = validateDvd(form);
+            break;
         default:
-            return false;
+            valResult = false;
+            break;
     } 
+
+    if (!valResult) {
+        errormsg.text("Please check if all fields are filled!");
+    }
+
+    return valResult;
     
 };
 
