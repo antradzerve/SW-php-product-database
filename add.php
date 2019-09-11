@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form action="productController.php" method="post">
+    <form action="productController.php" method="post" onsubmit="return validateFields(this)">
         <div class="container-fluid">
             <div class="row">
                 <div class="col d-flex m-3">
@@ -29,19 +29,19 @@
             <div class="form-group row">
                 <label class="col-2">SKU</label>
                 <div class="col-4">
-                    <input type="text" class="form-control" name="sku">
+                    <input type="number" class="form-control" name="sku" required="true">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2">Name</label>
                 <div class="col-4">
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" name="name" required="true">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2">Price</label>
                 <div class="col-4">
-                    <input type="number" class="form-control" name="price" step="0.01">
+                    <input type="number" class="form-control" name="price" step="0.01" required="true">
                 </div>
             </div>
             <div class="form-group row">
@@ -53,6 +53,7 @@
                         <option value="opt-furniture">Furniture</option>
                     </select>
                 </div>
+                <p></p>
             </div>
 
         </div>
