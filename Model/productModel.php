@@ -106,4 +106,23 @@ class ProductModel
 
     }
 
+    public static function delete($sku){
+        $conn = ProductModel::createConnection();
+        if (!$conn) {
+            return;
+        }
+
+        try{    
+            $sql = "DELETE FROM products WHERE sku=:sku";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':sku', $sku);
+            $stmt->execute();
+            
+        } catch(PDOException $e){
+            die("ERROR: Could not able to execute $sql. " . $e->getMessage());
+        }
+
+        unset($conn);
+    }
+
 }

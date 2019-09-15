@@ -5,7 +5,7 @@ include ("Model/productModel.php");
 function PostRequest() {
 
     $sku = $_REQUEST['sku'];
-    $name = $_POST['name'];
+    $name = $_REQUEST['name'];
     $price = $_REQUEST['price'];
     $type = $_REQUEST['type'];
     $size = empty($_REQUEST['size']) ? null : $_REQUEST['size'];
@@ -30,10 +30,28 @@ function PostRequest() {
 
 }
   
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    PostRequest();
-    header('Location: add.php');
+if (isset($_REQUEST['_method'])) {
+    switch($_REQUEST['_method'])
+    {
+        case 'post':
+            PostRequest();
+            header('Location: add.php');
+            break;
+        case 'delete':
+            if(isset($_REQUEST['products'])){
+                $skuForDeletion = $_REQUEST['products'];
+                foreach ($skuForDeletion as $sku){
+                    ProductModel::delete($sku);
+                }
+            }
+            header('Location: /'); 
+            break;
+        default:
+            echo 'sumtin wong';
+    }
 }
+
+
 
 function getAllProducts() {
 

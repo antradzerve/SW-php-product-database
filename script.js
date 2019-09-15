@@ -23,10 +23,10 @@ $(document).ready(function() {
     var selValue = $(".custom-select").val();
         
     if(selValue == 1){
-        $("#apply-button").removeClass("disabled");
+        $("#applybutton").removeClass("disabled");
     }
     else{ 
-        $("#apply-button").addClass("disabled");
+        $("#applybutton").addClass("disabled");
     };
     });
 

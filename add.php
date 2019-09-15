@@ -14,6 +14,7 @@
 
 <body>
     <form action="productController.php" method="post" onsubmit="return validateFields(this)">
+    <input type="hidden" name="_method" value="post"> 
         <div class="container-fluid">
             <div class="row">
                 <div class="col d-flex m-3">

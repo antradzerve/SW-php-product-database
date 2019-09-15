@@ -12,6 +12,8 @@
 </head>
 
 <body>
+<form action="productController.php" method="post">
+<input type="hidden" name="_method" value="delete">
     <div class="container-fluid">
         <div class="row">
             <div class="col d-flex m-3">
@@ -26,7 +28,7 @@
                         </select>
                     </div>
                     <div class="col-3">
-                        <button type="button" id="apply-button" class="btn btn-light disabled">Apply</button>
+                        <button name="delete" type="submit" id="applybutton" class="btn btn-light disabled">Apply</button>
                     </div>
                 </div>
             </div>
@@ -60,7 +62,7 @@
                 ?>
         </div>
     </div>
-
+    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -71,3 +73,4 @@
 </body>
 
 </html>
+
