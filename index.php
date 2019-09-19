@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col d-flex m-3">
-                <p class="m-0 align-self-center">Product list</p>
+                <h2 class="m-0 align-self-center">Product list</h2>
             </div>
             <div class="col m-3">
                 <div class="row">
@@ -27,7 +27,7 @@
                             <option value="1">Mass delete</option>
                         </select>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 d-flex justify-content-end">
                         <button name="delete" type="submit" id="applybutton" class="btn btn-light disabled">Apply</button>
                     </div>
                 </div>
@@ -63,6 +63,10 @@
         </div>
     </div>
     </form>
+
+    <div class="container-fluid">
+        <button onclick="window.location.href = './add.php'" class="btn btn-light my-3">Add product</button>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

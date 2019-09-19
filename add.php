@@ -14,92 +14,99 @@
 
 <body>
     <form action="productController.php" method="post" onsubmit="return validateFields(this)">
-    <input type="hidden" name="_method" value="post"> 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col d-flex m-3">
-                    <p class="m-0 align-self-center">Product add</p>
-                </div>
-                <div class="col m-3 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-light">Save</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="form-group row">
-                <label class="col-2">SKU</label>
-                <div class="col-4">
-                    <input type="number" class="form-control" name="sku" required="true">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-2">Name</label>
-                <div class="col-4">
-                    <input type="text" class="form-control" name="name" required="true">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-2">Price</label>
-                <div class="col-4">
-                    <input type="number" class="form-control" name="price" step="0.01" required="true">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-2">Type switcher</label>
-                <div class="col-4">
-                    <select class="form-control" id="opt-select" name="type">
-                        <option value="opt-dvd">DVD-disc</option>
-                        <option value="opt-book">Book</option>
-                        <option value="opt-furniture">Furniture</option>
-                    </select>
-                </div>
-                <p></p>
-            </div>
-
-        </div>
-
-        <div class="container" id="dvd-disc">
-
-            <div class="form-group row">
-                <label class="col-2">Size</label>
-                <div class="col-4"><input type="number" class="form-control" name="size" min="0"></div>
-            </div>
-
-            <p>Please provide the size of the disc in MB</p>
-        </div>
-
-        <div class="container" id="book">
-
-            <div class="form-group row">
-                <label class="col-2">Weight</label>
-                <div class="col-4"><input type="number" class="form-control" name="weight" step="0.001" min="0"></div>
-            </div>
-
-            <p>Please provide the weight of the book in KG</p>
-        </div>
-
-        <div class="container" id="furniture">
-
-            <div class="form-group">
-                <div class="row my-1">
-                    <label class="col-2">Height</label>
-                    <div class="col-4"><input type="number" class="form-control" name="height" step="0.01" min="0"></div>
-                </div>
-                <div class="row my-1">
-                    <label class="col-2">Width</label>
-                    <div class="col-4"><input type="number" class="form-control" name="width" step="0.01" min="0"></div>
-                </div>
-                <div class="row my-1">
-                    <label class="col-2">Length</label>
-                    <div class="col-4"><input type="number" class="form-control" name="length" step="0.01" min="0"></div>
+        <input type="hidden" name="_method" value="post"> 
+        
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col d-flex m-3">
+                        <h2 class="m-0 align-self-center">Product add</h2>
+                    </div>
+                    <div class="col m-3 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-light">Save</button>
+                    </div>
                 </div>
             </div>
 
-            <p>Please provide the dimensions in HxWxL format in meters</p>
-        </div>
-        <div class="container"><p id="errormsg"></p></div>
+            
+            <div class="container formattingcont m-2 mt-3">
+                <div class="container">
+                    <div class="form-group row">
+                        <label class="col-2">SKU</label>
+                        <div class="col-4">
+                            <input type="number" class="form-control" name="sku" required="true">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2">Name</label>
+                        <div class="col-4">
+                            <input type="text" class="form-control" name="name" required="true">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2">Price</label>
+                        <div class="col-4">
+                            <input type="number" class="form-control" name="price" step="0.01" required="true">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2">Type switcher</label>
+                        <div class="col-4">
+                            <select class="form-control" id="opt-select" name="type">
+                                <option value="opt-dvd">DVD-disc</option>
+                                <option value="opt-book">Book</option>
+                                <option value="opt-furniture">Furniture</option>
+                            </select>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="container" id="dvd-disc">
+
+                    <div class="form-group row">
+                        <label class="col-2">Size</label>
+                        <div class="col-4"><input type="number" class="form-control" name="size" min="0"></div>
+                    </div>
+
+                    <p>Please provide the size of the disc in MB</p>
+                </div>
+
+                <div class="container" id="book">
+
+                    <div class="form-group row">
+                        <label class="col-2">Weight</label>
+                        <div class="col-4"><input type="number" class="form-control" name="weight" step="0.001" min="0"></div>
+                    </div>
+
+                    <p>Please provide the weight of the book in KG</p>
+                </div>
+
+                <div class="container" id="furniture">
+
+                    <div class="form-group">
+                        <div class="row my-1">
+                            <label class="col-2">Height</label>
+                            <div class="col-4"><input type="number" class="form-control" name="height" step="0.01" min="0"></div>
+                        </div>
+                        <div class="row my-1">
+                            <label class="col-2">Width</label>
+                            <div class="col-4"><input type="number" class="form-control" name="width" step="0.01" min="0"></div>
+                        </div>
+                        <div class="row my-1">
+                            <label class="col-2">Length</label>
+                            <div class="col-4"><input type="number" class="form-control" name="length" step="0.01" min="0"></div>
+                        </div>
+                    </div>
+
+                    <p>Please provide the dimensions in HxWxL format in meters</p>
+                </div>
+
+            </div>
+
+            <div class="container"><p id="errormsg"></p></div>
+        
     </form>
+
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>

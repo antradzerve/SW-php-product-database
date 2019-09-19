@@ -36,18 +36,12 @@ class ProductModel
 
     private static function createConnection()
     {
-        /*** mysql hostname ***/
         $hostname = '127.0.0.1';
-
-        /*** mysql username ***/
         $username = 'root';
-
-        /*** mysql password ***/
         $password = 'root';
 
         try {
             $conn = new PDO("mysql:host=$hostname;dbname=scandiweb", $username, $password);
-            /*** echo a message saying we have connected ***/
             return $conn;
         } catch (PDOException $e) {
             //TODO: DON'T ECHO

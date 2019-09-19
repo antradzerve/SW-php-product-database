@@ -22,7 +22,7 @@ $(document).ready(function() {
     $(".custom-select").change(function() {
     var selValue = $(".custom-select").val();
         
-    if(selValue == 1){
+    if(selValue == 1 || selValue == 2){
         $("#applybutton").removeClass("disabled");
     }
     else{ 
