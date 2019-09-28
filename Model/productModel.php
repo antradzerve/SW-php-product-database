@@ -100,7 +100,24 @@ class ProductModel
 
     }
 
-    public static function delete($sku){
+    public static function getOne($sku){
+        $conn = ProductModel::createConnection();
+        if (!$conn) {
+            return;
+        }
+
+        $sql = "SELECT * FROM products WHERE sku = :sku";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':sku', $sku);
+        $stmt->execute();
+        $row=$stmt->fetch();
+
+        $product = new ProductModel($row['sku'],$row['name'],$row['price'],$row['type'],$row['size'],$row['weight'],$row['height'],$row['width'],$row['length'] );
+
+        return $product;
+    }
+
+    public function delete(){
         $conn = ProductModel::createConnection();
         if (!$conn) {
             return;
@@ -109,7 +126,7 @@ class ProductModel
         try{    
             $sql = "DELETE FROM products WHERE sku=:sku";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':sku', $sku);
+            $stmt->bindParam(':sku', $this->sku);
             $stmt->execute();
             
         } catch(PDOException $e){

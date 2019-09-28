@@ -40,7 +40,8 @@ public function getAllProducts() {
 }
 
 public function delete($sku) {
-    ProductModel::delete($sku);
+    $product = ProductModel::getOne($sku);
+    $product->delete();
     header('Location: /');
 }
 
