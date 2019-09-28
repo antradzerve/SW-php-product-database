@@ -2,7 +2,9 @@
 
 include ("Model/productModel.php");
 
-function PostRequest() {
+class ProductController{
+
+public function PostRequest() {
 
     $sku = $_REQUEST['sku'];
     $name = $_REQUEST['name'];
@@ -27,37 +29,42 @@ function PostRequest() {
     );
 
     $product->save();
-
+    header('Location: add.php');
 }
   
+public function getAllProducts() {
+
+    $arr = ProductModel::getAll();
+    return $arr;
+
+}
+
+public function delete($sku) {
+    ProductModel::delete($sku);
+    header('Location: /');
+}
+
+}
+
+$controller = new ProductController();
+
 if (isset($_REQUEST['_method'])) {
     switch($_REQUEST['_method'])
     {
         case 'post':
-            PostRequest();
-            header('Location: add.php');
+            $controller->PostRequest();
             break;
         case 'delete':
             if(isset($_REQUEST['products'])){
                 $skuForDeletion = $_REQUEST['products'];
                 foreach ($skuForDeletion as $sku){
-                    ProductModel::delete($sku);
+                    $controller->delete($sku);
                 }
             }
-            header('Location: /'); 
             break;
         default:
             echo 'sumtin wong';
     }
-}
-
-
-
-function getAllProducts() {
-
-    $arr = ProductModel::getAll();
-    return $arr;
-
 }
 
 ?>

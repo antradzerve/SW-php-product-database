@@ -40,8 +40,8 @@
             <?php
 
                 include("productController.php");
-
-                $arr = getAllProducts();
+                $controller = new ProductController();
+                $arr = $controller->getAllProducts();
                 foreach ($arr as $product) {
                     $type = $product->type;
                     switch ($type) {
